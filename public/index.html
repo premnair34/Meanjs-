@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+	<base href="/">
+
+	<title>Driver App</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link><!--  css/bootstrap.min.css-->
+	<link rel="stylesheet" href="css/style.css"></link> <!-- custom styles Raleway-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link><!-- css/font-awesome-4.7.0/css/font-awesome.min.css -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"></link>
+	<link rel="stylesheet" href="css/login.css"></link>
+	<link rel="stylesheet" href="css/welcome.css"></link>
+	<link rel="stylesheet" href="css/dashboard.css"></link>
+	<link rel="stylesheet" href="css/privacy.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/angular-moment-picker.min.css">
+
+	<!-- JS -->
+	<script src="libs/angular.js"></script>
+	<script type="text/javascript" src="libs/angular-animate.js"></script>
+	<script type="text/javascript" src="libs/ui-bootstrap-tpls-2.5.0.js"></script>
+	<script src="libs/angular-ui-router.min.js"></script>
+	<script src="libs/angular-messages.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key='YOUR_API_KEY&libraries=places"></script>
+	<script src="libs/angular-cookies.js"></script>
+	<script type="text/javascript" src="libs/vs-google-autocomplete.js"></script>
+	<script type="text/javascript" src="libs/moment.js"></script>
+	<script type="text/javascript" src="libs/angular-moment.js"></script>
+
+	<!-- ANGULAR CUSTOM -->	
+	 <!-- <script src="./build/app.js"></script> -->
+	<script src="js/appDirectives.js"></script>	
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+	<script type="text/javascript" src="js/services/commonService.js"></script>
+	<script type="text/javascript" src="js/services/authService.js"></script>
+	<script src="js/controllers/welcomeCtrl.js"></script>
+	<script src="js/controllers/loginCtrl.js"></script>
+	<script src="js/controllers/dashboardCtrl.js"></script>
+	<script src="js/controllers/bookController.js"></script>
+	<script src="js/controllers/profileController.js"></script>
+	<script src="js/controllers/myBooking.js"></script>
+	<script type="text/javascript" src="js/controllers/verifyController.js"></script>
+	<script src="js/controllers/termsandpolicy.js"></script>
+</head>
+<body ng-app="rioApp" ng-controller="appController" ng-class="page.name">
+<div class="content">
+	
+	<!-- HEADER -->
+	<div ui-view="header"></div>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div ui-view="pageContent" class="pageContent"></div>
+	<div ui-view="footer"></div>
+</div>
+</body>
+</html>

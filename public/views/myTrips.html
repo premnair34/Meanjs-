@@ -1,0 +1,135 @@
+<div id="mytrips-container">
+	<div class="page-title text-center">
+		<h1>My Trips</h1>
+	</div>	
+	<div ng-if="allBooking.length == 0">
+		<div class="alert-info alert text-center" style="border-radius: 0px">
+			No booking yet
+		</div>
+	</div>
+	<script type="text/ng-template" id="group-template.html">
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+	        <h4 class="panel-title">
+	          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+	            <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+	              {{heading}}
+	            </span>
+	          </a>
+	        </h4>
+	      </div>
+	      <div class="panel-collapse collapse" uib-collapse="!isOpen">
+	        <div class="panel-body container-fluid" ng-transclude></div>
+	      </div>
+	    </div>
+	</script>
+	<div class="padding-0 inner-body-wrapper" ng-if="allBooking.length != 0">
+		<div class="animate-container">
+			<uib-accordion close-others="oneAtATime" >  
+				<div class="item-row">
+					<div class="row">
+				    	<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 ">
+				    		<span class="title">Pickup</span>
+				    	</div>
+				    	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 ">
+				    		<span class="title">Driver</span>
+				    	</div>	
+				    	<div class="col-xs-6 col-sm-6 col-md-1 col-lg-2">
+				    		<span class="title">Lov</span>
+				    	</div>	
+				    	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				    		<span class="title">Ride Type</span>
+				    	</div>	
+				    	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				    		<span class="title"	>Payment</span>
+				    	</div>			    	
+			    	</div>
+				</div>
+			    <div uib-accordion-group class="book-list animate-repeat" template-url="group-template.html" ng-repeat="book in booking  = (allBooking | orderBy:'CreatedDate':true)" is-open="book.isOpen">
+				<uib-accordion-heading>
+					<div class="row item-row" ng-click="openItem(book)">
+				    	<div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 ">
+				    		<span>{{book.drop_date}}</span>
+				    	</div>
+				    	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
+				    		<span>{{book.driver}}</span>
+				    	</div>	
+				    	<div class="col-xs-6 col-sm-6 col-md-1 col-lg-2">
+				    		<span class="lov">{{book.lov}}</span>
+				    	</div>	
+				    	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				    		<span>{{book.ridetype}}</span>
+				    	</div>	
+				    	<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				    		<span>Cash</span>
+				    	</div>				    	
+				    	<div class="arrow" >
+				    		<i class="fa fa-angle-down" aria-hidden="true" 
+				    		ng-if="!book.open"></i>
+				    		<i class="fa fa-angle-up" aria-hidden="true" 
+				    		ng-if="book.open"></i>
+				    	</div>					    	
+			    	</div>
+				</uib-accordion-heading> 
+					<div class="booking-wrapper">
+						<div class="inner-wrapper">	
+							<div class="row item-row">
+						    	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						    		<span>
+						    			<img src="images/default_map.png"/>
+						    		</span>
+						    	</div>
+						    	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						    		<div class="row">
+						    			<div class="col-md-6">
+						    				<div class="trip-container">
+						    					<!-- <div >{{book.drop_date}}</div> -->
+						    					<div class="trip-border"></div>
+						    					<div class="trip-address">
+						    						<div class="grid-item one-tenth">
+							    						<i class="fa fa-dot-circle-o color--positive" aria-hidden="true"></i>
+							    					</div>
+							    					<div class="grid-item nine-tenth">
+							    						<div class="trip-address">{{book.pickup}}</div>
+							    					</div>
+						    					</div>
+						    					<div class="trip-address">
+						    						<div class="grid-item one-tenth">
+							    						<i class="fa fa-dot-circle-o color--negative" aria-hidden="true"></i>
+							    					</div>
+							    					<div class="grid-item nine-tenth">
+							    						<div class="trip-address">{{book.drop}}</div>
+							    					</div>
+						    					</div>
+						    				</div>											
+						    			</div>
+						    			<div class="col-md-6">
+						    				<div class="feedback-container">
+						    					<div class="inp-form">
+						    						<span uib-rating ng-model="book.rating" max="max" read-only="book.readonly" titles="['Very poor','Poor','Average','Good',
+						    				 		'Excellent']" ></span>
+						    					</div>
+						    					<div class="inp-form">
+						    						<textarea ng-model="book.comments" placeholder="Comments" ng-disabled="book.readonly">		
+						    						</textarea>
+						    					</div>
+						    					<div class="successMsg" ng-if="book.success">
+					    							Thanks for the feedback
+						    					</div>
+						    					<div class="inp-form text-right" ng-if="!book.readonly">
+						    						<button ng-click="feedback(book)" class="inp-btn">
+						    							Feedback
+						    						</button>
+						    					</div>
+						    				</div>
+						    			</div>
+						    		</div>
+						    		
+						    	</div>		    	
+					    	</div>	
+					    </div>
+					</div>
+			</uib-accordion>
+		</div>
+	</div>
+</div>

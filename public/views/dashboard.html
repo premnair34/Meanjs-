@@ -1,0 +1,41 @@
+<div id="dashboard-wrapper" ng-init="stateLoad()">
+<div class="container">
+	<div class="alert alert-warning text-center" role="alert" id="verify-banner" 
+	 ng-if="!user.verified">
+	  <strong>One more step ! </strong>Please verify your email sent to  <strong>{{user.email}} </strong>
+	  <button class="btn" ng-click="resendActivation()">Resend Email</button>
+	  <p ng-show="msg">{{msg}}</p>
+	</div>
+	<div class="row dashboard-border">
+		<div class="col-sm-3 col-md-3" >
+			<div id="left-div">
+				<div id="profile-container">
+					<ul class="site-nav">
+					   <li class="soft-ends">
+					      	<div class="center-block three-quarters">
+					         <div class="img-border">
+					         	<i class="fa fa-user" aria-hidden="true"></i>
+					         </div>
+					     	</div>
+					      	<div class="text-center">
+					         <div class="username">{{user.name}}</div>
+					      	</div>
+					   </li>
+					    <li><a ng-click="changeRoute(routingItems[0])" ng-class="{'active-route':page.name == routingItems[0].route}" >Book Ride</a></li>
+					   <li><a ng-click="changeRoute(routingItems[2])" ng-class="{'active-route':page.name == routingItems[2].route}" >My Trips</a></li>
+					   <li><a ng-click="changeRoute(routingItems[1])" ng-class="{'active-route':page.name == routingItems[1].route}" >Profile</a></li>
+					  <!--  <li><a ng-click="changeRoute(routingItems[1])" ng-class="{'active-route':activeRoute == routingItems[1]}">Payment</a></li>
+					   <li><a ng-click="changeRoute(routingItems[1])" ng-class="{'active-route':activeRoute == routingItems[1]}" class="free-rides-button">Free Rides</a></li> -->
+					   <li><a ng-click="logout()">Log out</a></li>				   
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-9 col-md-9" >		
+			<div id="right-div" class="separated-left">
+				<div ui-view></div>				
+			</div>
+		</div>
+	</div>
+</div>
+</div>

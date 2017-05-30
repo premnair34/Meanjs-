@@ -1,0 +1,67 @@
+<div id="registration-wrapper">
+	<div class="overlay-img1">
+		<div class="reg-wrapper">
+			<dir class="row">
+				<div class="col-md-6">
+					<div class="overlay-img"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="login_container">
+						<div class="title" >
+							<div class="row">
+								<h3 class="box-title sgnin col-md-5" >Login</h3>
+								<!-- <span class="col-md-7 text-right light-bold sub-title">Don't have an account?
+								 <a ng-click="toggleForm(true)" class=" signup_link" >Register</a>
+								 </span> -->
+							</div>							
+						</div>
+						<div class="body">
+							<div class="margin-20 social-links text-center">
+								<a href="#">
+								  	<div class="auth-method _facebook">
+										<span class="icon">
+								  			<i class="fa fa-facebook" aria-hidden="true"></i>
+								  		</span>
+									</div>
+								</a>
+								<a href="#">
+									<div class="auth-method _gplus">
+										<span class="icon ">
+								  			<i class="fa fa fa-google-plus" aria-hidden="true"></i>
+								  		</span>
+									</div>									
+								</a>
+							</div>
+							<div class="divider margin-20">
+								<span class="or">OR</span>
+							</div>
+							<form name="loginform" novalidate>
+								<div class="inp1-wrapper">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+									<input type="email" name="email" class="input-field" 
+									placeholder="Email" ng-model="userDetails.email" required />
+									<div ng-messages="loginform.email.$error" ng-if="lsubmitted && loginform.email.$invalid">
+								   	 <div ng-message="required" class="err">Email is required</div>
+								  </div>
+								</div>
+								<div class="inp1-wrapper">
+									<i class="fa fa-key" aria-hidden="true"></i>
+									<input type="{{passwordType}}" name="password" class="input-field" placeholder="Password" required ng-model="userDetails.password">
+									<i class="fa" ng-click="showPassword()" ng-class="{'fa-eye-slash':passwordType == 'text' ,'fa-eye': passwordType != 'text'}" ></i>
+									<div ng-messages="loginform.password.$error" ng-if="lsubmitted && loginform.password.$invalid">
+								   	 <div ng-message="required" class="err">Password is required</div>
+								  </div>
+								</div>	
+								<div class="err" ng-if="userDetails.errMsg">{{userDetails.errMsg}}</div>
+								<div class="inp1-wrapper text-center">
+									<input type="button" name="" class="input-btn" value="Login" ng-click="loginUser(loginform)" />
+								</div>
+							</form>													
+						</div>
+					</div>
+				</div>
+
+			</dir>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+<div id="profile-wrappper">
+	<div class="page-title text-center">
+		<h1>my account</h1>
+	</div>	
+	<div class="container-fluid inner-body-wrapper">
+		<div class="book-form">
+			<div class="profile-box">
+				<form name="profileForm" novalidate>
+					<div class="inp1-wrapper">
+						<i class="fa fa-user" aria-hidden="true"></i>
+						<input type="text" name="name" placeholder="User Name" class="input-field" ng-model="profile.name" required />	
+						<div ng-messages="profileForm.name.$error" ng-if="profile.validate && profileForm.name.$invalid">
+					   	 <div ng-message="required" class="err">Please enter UserName</div>
+					  </div>				
+					</div>
+					<div class="inp1-wrapper">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<input type="email" name="email" placeholder="Email" class="input-field" ng-model="profile.email" readonly required />	
+						<div ng-messages="profileForm.email.$error" ng-if="profile.validate && profileForm.email.$invalid">
+					   	 <div ng-message="required" class="err">Please enter Email</div>
+					   	 <!-- <div ng-message="email" class="err">Please enter Valid Email</div> -->
+					  </div>
+					</div>	
+					<div class="inp1-wrapper">
+						<i class="fa fa-mobile" aria-hidden="true"></i>
+						<input type="text" name="phone" placeholder="Phone" 
+						class="input-field" 
+						ng-model="profile.phone" required />
+						<div ng-messages="profileForm.phone.$error" ng-if="profile.validate && profileForm.phone.$invalid">
+					   	 <div ng-message="required" class="err">Please enter Mobile Number</div>
+					   	 <!-- <div ng-message="email" class="err">Please enter Valid phone</div> -->
+					   	 </div>
+					</div>	
+					<div class="inp1-wrapper">
+						<i class="fa fa-map-marker"></i>
+						<select name="location" class="input-field" ng-model="profile.location" required ng-options="i.id as i.name for i in location">
+						</select>
+						<div ng-messages="profileForm.location.$error" ng-if="profile.validate && profileForm.location.$invalid">
+					 	 	<div ng-message="required" class="err">Please select Location
+					 	 	</div>
+				   		</div>
+					</div>	
+					<div class="successMsg" ng-if="profile.success">Profile is update successfully</div>
+					<div class="err" ng-if="profile.error">Profile is not updated successfully</div>
+					<div class="inp1-wrapper text-center">
+						<button class="input-btn" ng-click="updateProfile(profileForm)" ng-disabled="wait || !user.verified" >Update Profile</button>
+					</div>		
+				</form>			
+			</div>
+		</div>
+	</div>
+</div>

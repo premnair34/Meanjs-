@@ -1,0 +1,74 @@
+<div id="registration-wrapper">
+	<div class="overlay-img1">
+		<div class="reg-wrapper">
+			<dir class="row">
+				<div class="col-md-6">
+					<div class="overlay-img"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="login_container">						
+						<div class="title">
+							<div class="row">
+								<h3 class="box-title sgnin col-md-5">Registration</h3>						
+							</div>							
+						</div>
+						<div class="body">
+							<div class="margin-20 social-links text-center">
+								<a href="#">
+								  	<div class="auth-method _facebook">
+										<span class="icon">
+								  			<i class="fa fa-facebook" aria-hidden="true"></i>
+								  		</span>
+									</div>
+								</a>
+								<a href="#">
+									<div class="auth-method _gplus">
+										<span class="icon ">
+								  			<i class="fa fa fa-google-plus" aria-hidden="true"></i>
+								  		</span>
+									</div>									
+								</a>
+							</div>
+							<div class="divider margin-20">
+								<span class="or">OR</span>
+							</div>
+							<form name="regForm" novalidate>
+								<div class="inp1-wrapper">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									<input type="text" name="user" class="input-field" placeholder="Name" ng-model="userDetails.name" required />
+									<div ng-messages="regForm.user.$error" ng-if="rsubmitted && regForm.user.$invalid">
+								   	 <div ng-message="required" class="err">Username is required</div>
+								</div>
+								<div class="inp1-wrapper">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+									<input type="email" name="email" class="input-field" placeholder="Email" ng-model="userDetails.email" required>
+									<div ng-messages="regForm.email.$error" ng-if="rsubmitted && regForm.email.$invalid">
+								   	 <div ng-message="required" class="err">Email is required</div>
+								</div>
+								<div class="inp1-wrapper">
+									<i class="fa fa-key" aria-hidden="true"></i>
+									<input type="{{passwordType}}" name="password" class="input-field" placeholder="Password(Min 6 Characters)" ng-model="userDetails.password" required />
+									<i class="fa" ng-click="showPassword()" ng-class="{'fa-eye-slash':passwordType == 'text' ,'fa-eye': passwordType != 'text'}" ></i>
+									<div ng-messages="regForm.password.$error" ng-if="rsubmitted && regForm.password.$invalid">
+								   	 <div ng-message="required" class="err">Password is required</div>
+								</div>
+								<div class="inp1-wrapper">
+									<input type="checkbox" name="termCondition" id="termCondition" required ng-model="checked">
+									<label id="termscond" class="sub-title">I agree to the 
+									<a ui-sref="terms" target="_blank" class="signup_link">Terms &amp; Conditions</a> and <a ui-sref="privacy" target="_blank" class="signup_link">Privacy Policy</a> </label>
+									<div ng-messages="regForm.termCondition.$error" ng-if="rsubmitted && regForm.termCondition.$invalid">
+								   	 <div ng-message="required" class="err">Please check the terms and conditions</div>
+								</div>	
+								<div class="err" ng-if="userDetails.errMsg">{{userDetails.errMsg}}</div>	
+								<div class="inp1-wrapper text-center">
+									<input type="button" name="" class="input-btn" value="Register" ng-click="registerUser(regForm)">
+								</div>
+							</form>				
+						</div>
+					</div>
+				</div>
+
+			</dir>
+		</div>
+	</div>
+</div>

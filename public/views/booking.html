@@ -1,0 +1,85 @@
+<div id="booking-container">
+	<div class="page-title text-center">
+		<h1>Book a ride</h1>
+	</div>	
+	<div class="container-fluid inner-body-wrapper" >
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<ul class="progress_bar container-fluid"> 
+					<li ng-class="{'active-bar':book.isFirst}" 
+						ng-click="showForm(true)">Request</li>
+					<li ng-class="{'active-bar':!book.isFirst}" ng-disabled="!book.saved" 
+					ng-click="showForm(false)">Review</li>
+				</ul>
+			</div>
+		</div>
+		<div class="book-form" ng-if="book.isFirst">
+			<form name="booking" novalidate>
+				<div class="inp1-wrapper">
+					<i class="fa fa-map" aria-hidden="true"></i>
+					<select name="lov" class="input-field" ng-model="book.lov" required ng-options="i for i in lovType">
+					</select>
+					<div ng-messages="booking.lov.$error" ng-if="book.validate && booking.lov.$invalid">
+				   	 	<div ng-message="required" class="err">Please select LOV</div>
+			   	 	</div>
+				</div>
+				<div class="inp1-wrapper">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<input type="text" name="pickup" class="input-field" 
+					placeholder="Pickup Address" ng-model="book.pickup" required vs-google-autocomplete="options" vs-place-id="book.pickId"/>
+					<div ng-messages="booking.pickup.$error" ng-if="book.validate && booking.pickup.$invalid">
+				   	 	<div ng-message="required" class="err">Please enter pick point</div>
+			   	 	</div>
+				</div>
+				<div class="inp1-wrapper">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<input type="text" name="drop" class="input-field" 
+					placeholder="Drop Address" ng-model="book.drop" required vs-google-autocomplete="options" vs-place-id="book.dropId"/>
+					<div ng-messages="booking.drop.$error" ng-if="book.validate && booking.drop.$invalid">
+				   		<div ng-message="required" class="err">Please enter drop point</div>
+				   	</div>
+				</div>
+				<div class="inp1-wrapper">
+					<i class="fa fa-mobile" aria-hidden="true"></i>
+					<input type="text" name="phone" class="input-field" 
+					placeholder="Mobile Number" ng-model="book.phone" required />
+					<div ng-messages="booking.phone.$error" ng-if="book.validate && booking.phone.$invalid" >
+				   	 	<div ng-message="required" class="err">Please enter Mobile Number</div>
+				   	 </div>
+				</div>
+				<div class="inp1-wrapper" moment-picker="book.date" format="DD-MM-YYYY hh:mm A" min-date="mindate" start-view="month" locale="en">
+					<i class="fa fa-calendar" aria-hidden="true"></i>
+					<input type="text" name="date" class="input-field"  ng-model="book.date" placeholder="Start Date" required ng-model-options="{ updateOn: 'blur' }" readonly />	
+					<div ng-messages="booking.date.$error" ng-if="book.validate && booking.date.$invalid" >
+				   	 	<div ng-message="required" class="err">Please enter Start Date</div>
+			   	 	</div>
+				</div>
+				<div class="inp1-wrapper">
+					<i class="fa fa-motorcycle" aria-hidden="true"></i>
+					<select name="type" class="input-field" ng-model="book.type" required ng-options="i.id as i.name for i in rideType">
+					  	<!-- <option ng-repeat="i in rideType">{{i.name}}</option> -->
+					</select>
+					<div ng-messages="booking.type.$error" ng-if="book.validate && booking.type.$invalid" >
+				   	 	<div ng-message="required" class="err">Please Select type</div>
+				   	 </div>
+				</div>
+				<div class="inp1-wrapper text-center">
+					<button class="input-btn" ng-click="createBook(booking)" 
+					ng-disabled="wait || !user.verified">Book a ride</button>
+				</div>								
+			</form>			
+		</div>
+		<div class="step-2 book-form" ng-if="!book.isFirst">
+			<div id="map" ></div>
+			<div class="inp1-wrapper">
+				<div id="summary"></div>
+			</div>
+			<div class="inp1-wrapper text-center" ng-if="!book.completed">
+				<button class="input-btn" ng-click="confirmBook()" 
+				ng-disabled="wait">Confirm Booking</button>
+			</div>	
+			<div class="successMsg" ng-if="book.completed">
+			Your Rider is on the Way!!!!!</div>
+		</div>
+	</div>
+</div>

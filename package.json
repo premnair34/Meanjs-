@@ -1,0 +1,40 @@
+{
+  "name": "starter-node-angular",
+  "main": "server.js",
+  "server": "server.js",
+  "dependencies": {
+    "async": "^2.4.0",
+    "bcrypt": "^1.0.2",
+    "body-parser": "~1.4.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
+    "express": "~4.5.1",
+    "express-validator": "^3.2.0",
+    "jsonwebtoken": "^7.4.0",
+    "loadash": "0.0.1",
+    "method-override": "~2.0.2",
+    "mongojs": "^2.4.0",
+    "mongoose": "^3.8.40",
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-nodemon": "^0.5.4",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ng-annotate": "^3.0.0",
+    "grunt-node-inspector": "^1.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}

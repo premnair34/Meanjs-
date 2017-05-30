@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default logo">
+<div class="container">
+  <div class="navbar-header">
+    <a class="navbar-brand" ui-sref="welcome">
+    <label class="logo-or">R</label>
+    <label class="logo-gr">i</label> 
+    <label class="logo-or">O</label>
+    </a>
+  </div>
+   <ul class="nav navbar-nav navbar-right">
+  <!--  <li ng-if="!isLogged"><a href="javscript:void(0)" 
+    class="header-btn">Mobile App</a></li> -->
+    <li ng-if="!isLogged">
+        <a ui-sref="login" class="header-btn"  ng-class="{'sel':page.name == 'login'}">Login</a>
+    </li>
+    <li ng-if="!isLogged">
+      <a ui-sref="registration" class="header-btn" ng-class="{'sel':page.name == 'registration'}">Signup</a>
+    </li>
+    <li ng-if="isLogged">
+    <div class="btn-group" uib-dropdown>
+      <button uib-dropdown-toggle class="profile-btn">
+        Hi &nbsp;{{user.name}}
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+        <li role="menuitem"><a ui-sref="dashboard.booking">Dashboard</a></li> 
+        <li role="menuitem"><a ui-sref="dashboard.profile">Profile</a></li>
+        <li role="menuitem">
+          <a ng-click="logout()" >Logout</a>
+        </li>
+      </ul>
+    </div>
+
+  </ul>
+</div>
+</nav>

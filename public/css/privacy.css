@@ -1,0 +1,83 @@
+#privacy-accordion .panel-default{
+	margin: 0;
+    border-radius: 0;
+    border: 0px;
+    border-bottom: 1px solid #d9e7ed!important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#privacy-accordion .panel-heading{
+    color: #02bbda;
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+    padding:0px;
+}
+#privacy-accordion .panel-title{
+	color: #02b5cc;
+    font-size: 18px;
+    font-weight: 400 !important;
+    margin: 0px;
+}
+#privacy-accordion i{
+	color: #bdc7d8!important;
+}
+#privacy-accordion .accordion-toggle{
+	margin:0px;
+    padding: 16px 0px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+}
+#privacy-accordion .accordion-toggle:hover{
+	text-decoration: none;
+}
+#privacy-accordion .panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: transparent;
+}
+#privacy-accordion .glyphicon-chevron-down,#privacy-accordion .glyphicon-chevron-up{
+	color: #02bbda;
+}
+#privacy-container .privacy-title{
+   	margin: 0;
+    padding: 0;
+    font-size: 22px;
+    color: #585858;
+    border-bottom: 3px solid #d9e7ed;
+    padding-top: 0;
+    font-weight: 600;
+    padding: 10px 0;
+    position: relative;
+}
+#privacy-container{
+   padding: 30px 0px;
+}
+#privacy-container .panel-group .panel{
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+#privacy-container .panel-group{
+	margin: 0px;
+}
+#privacy-container .panel-body{
+ 	padding: 20px 20px;    
+    border-bottom:1px solid #ddd;
+}
+#privacy-container .inp-wrapper {
+	padding: 0px;
+    padding-bottom: 16px !important;
+}
+#privacy-container .content-privacy{
+	padding:16px 0px !important;
+}
+#privacy-container .rev-date{
+	text-align: right !important;
+    font-size: 14px;
+    top: 20px;
+    position: absolute;
+    right: 0;
+    line-height: 0;
+    color: #7dc85e!important;
+}    

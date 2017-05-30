@@ -1,0 +1,142 @@
+.overlay-img{	 
+    width: 100%;
+    color: #666;
+    min-height: 480px;
+    background: url(/images/login.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.reg-wrapper{
+	width: 100%;
+    margin: 0px;
+    padding:0px;
+}
+.login_container{
+ background: #fff;
+    border-radius: 0;
+    padding-top: 2%;
+    width: 60%;
+    margin: 0 auto;
+}
+.login_container .title {
+    padding: 10px 0px;
+    color: #02b5cc;
+}
+ .signup_link{
+    cursor: pointer;
+    color: #7dc85e;
+    font-weight: 400;
+     text-decoration: underline;
+ }
+ .signup_link:hover,.signup_link:visited{
+color: #7dc85e;
+}
+.box-title{
+    display: inline-block;
+    color: #02b5cc;
+}
+.body{
+	padding: 0px;
+}
+.input-field{
+	padding:12px 10px 12px 45px;
+    width: 100%;
+    border: 1px solid #fff;
+    outline: 0;
+    border-radius: 3px;
+    background: #dee3e7;
+    color: #092e41;
+    font-weight: 500;
+}
+.inp1-wrapper{
+	position: relative;
+	padding: 10px 0px;
+}
+.username {
+    font-weight: 400;
+    text-transform: capitalize;
+    padding-top: 8px;
+}
+.fa-envelope,.fa-key,.fa-eye,.fa-eye-slash,.fa-user{
+	position: absolute;
+    color: #02b5cc;
+    font-size: 20px;
+    top: 22px;
+    left: 12px;
+}
+.fa-eye,.fa-eye-slash{
+	right: 12px;
+    left: auto;
+    cursor: pointer;
+}
+.fa-mobile,.fa-user,.fa-bars{
+    font-size: 20px;
+    padding-right: 6px;
+ }
+
+._facebook {
+    background: #3b57a1;
+}._gplus {
+    background: #ea4930;
+}
+.social-links a {
+    display: inline-block;
+}
+.sub-title{
+    color: #ccc;    
+    font-weight: 400;   
+}
+.auth-method {   
+    color: #FFF;   
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: relative;
+}
+.icon .fa{
+    position: absolute;
+    top: 13px;
+    font-size: 20px;
+    left: 16px;
+    color: #fff;
+}
+.icon .fa-google-plus{
+    font-size: 16px;
+    left: 14px;
+    top: 14px;
+}
+.divider {
+    position: relative;
+    border-bottom: 1px dashed #02b5cc;
+}
+.social-links a:first-child{
+    margin-right: 48px;
+}
+.divider .or {
+    background-color: #02b5cc;
+    border-radius: 50%;
+    color: #666;
+    font-size: 12px;
+    position: absolute;
+    top: -15px;
+    width: 35px;
+    height: 35px;
+    padding-top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #02b5cc;
+    padding-left: 8px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.margin-20{
+	margin-bottom: 20px;
+}
+@media only screen and (max-device-width:720px) {
+    .reg-wrapper{
+         width: 50%;
+    }
+}
+   
