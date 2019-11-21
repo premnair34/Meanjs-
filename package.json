@@ -15,7 +15,7 @@
     "loadash": "0.0.1",
     "method-override": "~2.0.2",
     "mongojs": "^2.4.0",
-    "mongoose": "^3.8.40",
+    "mongoose": "^5.7.12",
     "morgan": "^1.8.1",
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
